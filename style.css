@@ -1846,3 +1846,90 @@ color:#777;
 .popup-close:hover{
 color:red;
 }
+
+/*================ POPUP RESMI =================*/
+.official-popup{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(8px);
+visibility:hidden;
+opacity:0;
+transition:.35s;
+z-index:999999999;
+}
+.official-popup.show{
+visibility:visible;
+opacity:1;
+}
+.official-card{
+background:#fff;
+width:92%;
+max-width:430px;
+padding:28px;
+border-radius:18px;
+text-align:center;
+position:relative;
+animation:popupZoom .35s;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+@keyframes popupZoom{
+from{
+transform:scale(.85);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+.official-icon{
+font-size:60px;
+margin-bottom:10px;
+}
+.official-card h2{
+color:#C62828;
+margin-bottom:12px;
+}
+.official-card h3{
+margin:10px 0;
+color:#0B5D32;
+}
+.official-alert{
+margin:18px 0;
+padding:14px;
+border-left:5px solid #ff9800;
+background:#FFF7D6;
+border-radius:10px;
+line-height:1.7;
+}
+.official-btn{
+width:100%;
+padding:13px;
+background:#0B5D32;
+color:#fff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+font-size:15px;
+}
+.official-btn:hover{
+background:#084726;
+}
+.official-close{
+position:absolute;
+top:12px;
+right:15px;
+font-size:28px;
+border:none;
+background:none;
+cursor:pointer;
+color:#777;
+}
+.official-close:hover{
+color:red;
+}
