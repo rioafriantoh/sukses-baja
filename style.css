@@ -1934,5 +1934,5 @@ color:#777;
 color:red;
 }
 body.popup-open{
-    overflow: hidden;
-    height: 100vh;
+    overflow: auto;
+    height: auto;
