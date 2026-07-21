@@ -44,6 +44,40 @@ sizes="128x128" href="img/logos.png">
 
 <body>
 
+<div id="warningPopup' class="popup-overlay">
+  <div class="popup-content">
+    <div class="popup-icon">⚠️</div>
+
+    <h2>Peringatan Resmi</h2>
+
+    <p>
+      Demi Keamanan Transaksi, <strong>Website Resmi Sukses Baja Hanya:</strong><br>
+      <a href="https://suksesbaja.online" target="_blank">https://suksesbaja.online</a>
+    </p>
+
+    <p>
+      <strong>Nomor WhatsApp Resmi Hanya:</strong><br>
+      <a href="https://wa.me/6282110851293">082110851293</a>
+    </p>
+
+    <p class+"warning-text">
+      Harap Berhati Hati Terhadap Pihak Yang Mengatasnamakan <strong>Sukses Baja</strong> Menggunakan Website Atau Nomor Selain Yang Tercantum Di Atas.
+    </p>
+
+    <button onclick="closePopup()">✔️ Saya Mengerti</button>
+  </div>
+</div>
+
+<script>
+window.onload = function () {
+  document.getElementById("warningPopup").style.display = "flex";
+};
+
+function ClosePopup() {
+  document.getElementById("warningPopup").style.display = "none";
+}
+</script>
+
 <!--====================
 HEADER
 =====================-->
