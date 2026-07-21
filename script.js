@@ -360,6 +360,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("officialPopup") !== today) {
         document.body.style.overflow = "hidden";
         popup.classList.add("show");
-        setTimeout(closeOfficialPopup, 5000);
+        setTimeout(closeOfficialPopup, 5800);
     }
 });
+function closeOfficialPopup(){
+    const popup = document.getElementById("officialPopup");
+    if(!popup) return;
+    popup.classList.remove("show");
+    document.body.style.overflow = "auto";
+    localStorage.setItem(
+        "officialPopup",
+        new Date().toDateString()
+    );
+}
