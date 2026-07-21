@@ -1933,3 +1933,7 @@ color:#777;
 .official-close:hover{
 color:red;
 }
+
+body{
+    overflow:hidden;
+}
