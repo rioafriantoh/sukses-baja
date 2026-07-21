@@ -1753,86 +1753,96 @@ gap:20px;
 
 }
 
-1 april 2026
-/* Popup Peringatan */
+/* ================= POPUP WARNING ================= */
 .popup-overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.65);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(8px);
+opacity:0;
+visibility:hidden;
+transition:.35s;
+z-index:999999;
 }
-.popup-content{
-    background:#fff;
-    width:90%;
-    max-width:420px;
-    padding:28px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    animation:popup .3s ease;
+.popup-overlay.show{
+opacity:1;
+visibility:visible;
+}
+.popup-box{
+position:relative;
+background:#fff;
+width:90%;
+max-width:430px;
+padding:30px;
+border-radius:18px;
+text-align:center;
+animation:popup .35s;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 @keyframes popup{
-    from{
-        transform:scale(.8);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
+from{
+transform:translateY(30px) scale(.9);
+opacity:0;
+}
+to{
+transform:translateY(0) scale(1);
+opacity:1;
+}
 }
 .popup-icon{
-    font-size:48px;
-    margin-bottom:10px;
+font-size:55px;
+margin-bottom:10px;
 }
-.popup-content h2{
-    color:#d32f2f;
-    margin-bottom:15px;
+.popup-box h2{
+color:#C62828;
+margin-bottom:15px;
 }
-.popup-content p{
-    margin:12px 0;
-    line-height:1.6;
-    color:#444;
+.popup-box a{
+font-weight:bold;
+font-size:18px;
+color:#0B5D32;
+text-decoration:none;
 }
-.popup-content a{
-    color:#d32f2f;
-    font-weight:bold;
-    text-decoration:none;
+.popup-warning{
+background:#FFF4D6;
+border-left:5px solid orange;
+padding:12px;
+border-radius:10px;
+margin:20px 0;
+line-height:1.6;
+font-size:14px;
 }
-.warning-text{
-    background:#fff3cd;
-    color:#856404;
-    padding:12px;
-    border-radius:8px;
-    margin-top:15px;
+.popup-btn{
+width:100%;
+padding:13px;
+border:none;
+border-radius:10px;
+background:#0B5D32;
+color:#fff;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
-.popup-content button{
-    margin-top:20px;
-    background:#d32f2f;
-    color:#fff;
-    border:none;
-    padding:12px 24px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-    transition:.3s;
+.popup-btn:hover{
+background:#084726;
 }
-.popup-content button:hover{
-    background:#b71c1c;
+.popup-close{
+position:absolute;
+top:12px;
+right:15px;
+background:none;
+border:none;
+font-size:28px;
+cursor:pointer;
+color:#777;
 }
-
-.popup-overlay{
-    opacity:1;
-    transition:opacity .5s ease;
-}
-.popup-overlay.hide{
-    opacity:0;
-    pointer-events:none;
+.popup-close:hover{
+color:red;
 }
