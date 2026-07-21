@@ -1937,3 +1937,6 @@ color:red;
 body{
     overflow:hidden;
 }
+body.popup-open{
+    overflow: hidden;
+    height: 100vh;
