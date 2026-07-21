@@ -353,26 +353,13 @@ WEBSITE READY
 console.log("TOKO BESI SUKSES BAJA V4 FINAL 🚀");
 
 /*================ POPUP RESMI =================*/
-window.addEventListener("load",()=>{
-const popup=document.getElementById("officialPopup");
-if(!popup) return;
-const today=new Date().toDateString();
-if(localStorage.getItem("officialPopup")==today){
-return;
-}
-setTimeout(()=>{
-popup.classList.add("show");
-},800);
-setTimeout(()=>{
-closeOfficialPopup();
-},5800);
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("officialPopup");
+    if (!popup) return;
+    const today = new Date().toDateString();
+    if (localStorage.getItem("officialPopup") !== today) {
+        document.body.style.overflow = "hidden";
+        popup.classList.add("show");
+        setTimeout(closeOfficialPopup, 5000);
+    }
 });
-function closeOfficialPopup(){
-const popup=document.getElementById("officialPopup");
-if(!popup) return;
-popup.classList.remove("show");
-localStorage.setItem(
-"officialPopup",
-new Date().toDateString()
-);
-}
