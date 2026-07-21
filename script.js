@@ -358,7 +358,6 @@ window.addEventListener("load", function () {
     if (!popup) return;
     // Untuk testing, popup selalu muncul
     // Hapus baris di bawah kalau nanti mau kembali 1x per hari
-    localStorage.removeItem("officialPopup");
     const today = new Date().toDateString();
     if (localStorage.getItem("officialPopup") === today) return;
     document.body.classList.add("popup-open");
