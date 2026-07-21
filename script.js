@@ -356,20 +356,11 @@ console.log("TOKO BESI SUKSES BAJA V4 FINAL 🚀");
 document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("officialPopup");
     if (!popup) return;
-    const today = new Date().toDateString();
-    if (localStorage.getItem("officialPopup") !== today) {
-        document.body.style.overflow = "hidden";
-        popup.classList.add("show");
-        setTimeout(closeOfficialPopup, 5800);
-    }
+    document.body.style.overflow = "hidden";
+    popup.classList.add("show");
 });
 function closeOfficialPopup(){
     const popup = document.getElementById("officialPopup");
-    if(!popup) return;
     popup.classList.remove("show");
     document.body.style.overflow = "auto";
-    localStorage.setItem(
-        "officialPopup",
-        new Date().toDateString()
-    );
 }
