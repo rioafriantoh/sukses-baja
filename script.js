@@ -353,14 +353,22 @@ WEBSITE READY
 console.log("TOKO BESI SUKSES BAJA V4 FINAL 🚀");
 
 /*================ POPUP RESMI =================*/
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", function () {
     const popup = document.getElementById("officialPopup");
     if (!popup) return;
-    document.body.style.overflow = "hidden";
+    // Untuk testing, popup selalu muncul
+    // Hapus baris di bawah kalau nanti mau kembali 1x per hari
+    localStorage.removeItem("officialPopup");
+    const today = new Date().toDateString();
+    if (localStorage.getItem("officialPopup") === today) return;
+    document.body.classList.add("popup-open");
     popup.classList.add("show");
+    setTimeout(closeOfficialPopup, 5800);
 });
-function closeOfficialPopup(){
+function closeOfficialPopup() {
     const popup = document.getElementById("officialPopup");
+    if (!popup) return;
     popup.classList.remove("show");
-    document.body.style.overflow = "auto";
+    document.body.classList.remove("popup-open");
+    localStorage.setItem("officialPopup", new Date().toDateString());
 }
