@@ -70,14 +70,25 @@ sizes="128x128" href="img/logos.png">
 
 <script>
 window.onload = function () {
-  document.getElementById("warningPopup").style.display = "flex";
+    const popup = document.getElementById("warningPopup");
+    popup.style.display = "flex";
+    setTimeout(function () {
+        popup.classList.add("hide");
+        setTimeout(function () {
+            popup.style.display = "none";
+            popup.classList.remove("hide");
+        }, 500);
+    }, 5000);
 };
-
-function ClosePopup() {
-  document.getElementById("warningPopup").style.display = "none";
+function closePopup() {
+    const popup = document.getElementById("warningPopup");
+    popup.classList.add("hide");
+    setTimeout(function () {
+        popup.style.display = "none";
+        popup.classList.remove("hide");
+    }, 500);
 }
 </script>
-
 <!--====================
 HEADER
 =====================-->
