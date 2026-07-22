@@ -1936,6 +1936,7 @@ color:red;
 body.popup-open{
     overflow: auto;
     height: auto;
+}
 
 .promo-bar{
     position:sticky;
